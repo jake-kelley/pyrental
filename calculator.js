@@ -606,22 +606,6 @@ function updateSummary(data) {
   
   const difference = endRentalValue - endSellValue;
 
-  // Find crossover point
-  let crossoverYear = null;
-  for (let i = 1; i < data.length; i++) {
-    const prev = data[i - 1];
-    const curr = data[i];
-    if (
-      (prev.simpleRentalNetWorth < prev.sellYear0Total &&
-        curr.simpleRentalNetWorth >= curr.sellYear0Total) ||
-      (prev.simpleRentalNetWorth > prev.sellYear0Total &&
-        curr.simpleRentalNetWorth <= curr.sellYear0Total)
-    ) {
-      crossoverYear = i;
-      break;
-    }
-  }
-
   const summary = document.getElementById("summary");
   
   const summaryHTML = `
@@ -643,16 +627,6 @@ function updateSummary(data) {
                 <div class="label">Better Option</div>
                 <div class="value neutral">${difference >= 0 ? "🏠 Rent" : "💰 Sell"}</div>
             </div>
-            ${
-              crossoverYear !== null
-                ? `
-            <div class="summary-item">
-                <div class="label">Crossover Point</div>
-                <div class="value neutral">Year ${crossoverYear}</div>
-            </div>
-            `
-                : ""
-            }
         </div>
     `;
   
