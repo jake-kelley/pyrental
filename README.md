@@ -2,9 +2,11 @@
 
 A client-side tool to compare the financial outcomes of renting your property vs selling it today.
 
+**Live Demo**: [jake-kelley.github.io/hold-or-sell](https://jake-kelley.github.io/hold-or-sell)
+
 ## Quick Start
 
-Open `index.html` in your browser. No build step or server required.
+Open `index.html` in your browser, or visit the live demo above. No build step or server required.
 
 ## Features
 
